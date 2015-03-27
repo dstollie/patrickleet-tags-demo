@@ -1,0 +1,23 @@
+<template name="tagsDemo">
+    {{#with item}}
+        {{> tagInput}}
+    {{/with}}
+</template>
+
+<!-- Context should be the object you are tagging -->
+<template name="tagInput">
+  <select class='tag-input' name='tags[]' multiple="multiple">
+    {{#each tags}}
+      <option value="{{this}}" selected="true">{{this}}</option>
+    {{/each}}
+  </select>
+</template>
+
+<!-- Context is object with 'tags' property -->
+<template name='tags'>
+  <div class='tags'>
+    {{#each tags}}
+      <span class="label label-tag">{{this}}</span>
+    {{/each}}
+  </div>
+</template>
